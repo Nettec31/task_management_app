@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Task Management App</h1>
+    <p id="task-summary">0 tasks shown</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="add-task-heading">
+      <h2 id="add-task-heading">Add a New Task</h2>
+      <form id="task-form">
+        <div class="field">
+          <label for="task-name">Task Name</label>
+          <input type="text" id="task-name" name="taskName" placeholder="e.g., Finish SBA 4" required />
+        </div>
+
+        <div class="field">
+          <label for="task-category">Category</label>
+          <select id="task-category" name="category" required>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="task-deadline">Deadline</label>
+          <input type="date" id="task-deadline" name="deadline" required />
+        </div>
+
+        <div class="field">
+          <label for="task-status">Initial Status</label>
+          <select id="task-status" name="status">
+            <option value="In Progress" selected>In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+
+        <button type="submit" id="add-btn">Add Task</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Filter Tasks</h2>
+      <div class="filters">
+        <div class="field">
+          <label for="filter-status">Status</label>
+          <select id="filter-status">
+            <option value="All">All Statuses</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Overdue">Overdue</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="filter-category">Category</label>
+          <select id="filter-category">
+            <option value="All">All Categories</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+
+        <button type="button" id="reset-filters-btn">Reset Filters</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="list-heading">
+      <h2 id="list-heading">Task List</h2>
+      <p id="feedback-msg" role="status" aria-live="polite"></p>
+      <ul id="task-list"></ul>
+    </section>
+  </main>
+</body>
+</html>
